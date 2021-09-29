@@ -1,9 +1,52 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
+  width:100%;
+  max-width:860px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  max-height: 100vh;
+}
+.city {
+  margin-top:20px
+}
+.city, .date, .todayCondition {
+  margin-bottom:20px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.weatherContainer {
+  min-height: 125px;
+}
+
+.grid {
+  margin-top: 24px;
+  flex: 1;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 23px;
+  max-height: 300px;
+
+}
+
+@media (min-width:860px){
+  .grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 45px;
+  }
+}
+
+.grid::-webkit-scrollbar {
+  display:none;
 }
