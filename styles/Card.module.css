@@ -1,0 +1,36 @@
+.container {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 12px;
+  flex:1;
+
+  background: var(--bg-blue);
+  border: 1px solid #00000047;
+  box-shadow: 0px 4px 4px #00000040;
+  border-radius: 9px;
+  min-width:250px;
+
+}
+
+.container + .container {
+  margin-top:23px;
+}
+
+.title {
+  font-family: Roboto,sans-serif;
+  font-weight: 500;
+}
+
+.value {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+
+}
+
+@media (min-width:860px){
+  .container + .container{
+    margin:0;
+  }
+}
+ 
