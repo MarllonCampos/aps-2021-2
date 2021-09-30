@@ -53,7 +53,7 @@ export default function Home({
 
       <div className={styles.weatherContainer}>
         <Image
-          src={`/${weather.data.icon}.jpg`}
+          src={`/${weather.data.icon}.png`}
           width={125}
           height={125}
           layout="fixed"
@@ -134,7 +134,11 @@ export const getStaticProps: GetStaticProps = async () => {
     dec: 175,
   };
   function getFormattedDate(date: Date) {
-    const formatedDate = format(date, 'dd/MM/yyyy',{locale:ptBR})
+    const time = new Date();
+    const utc = time.getTime() + (time.getTimezoneOffset() * 60000);
+    const brazil = new Date(utc + (3600000 * -3));
+    const brazilTime = new Date(brazil);
+    const formatedDate = format(brazilTime, 'dd/MM/yyyy',{locale:ptBR})
 
     return formatedDate
   }
