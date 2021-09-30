@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -101,7 +101,7 @@ export default function Home({
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const FORMULAPARAATM = 0.000987;
   const monthNames = [
     "jan",
@@ -118,7 +118,7 @@ export const getStaticProps = async () => {
     "dec",
   ];
 
-  const averagePrecipitation: object = {
+  const averagePrecipitation: any = {
     jan: 288,
     fev: 167,
     mar: 150,
@@ -201,5 +201,7 @@ export const getStaticProps = async () => {
       weather: formatClima,
       rainProbability: dataAccu[0].RainProbability,
     },
+
+    revalidate: 3600
   };
 };
