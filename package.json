@@ -10,6 +10,8 @@
     "server": "json-server server.json -w --port 3003"
   },
   "dependencies": {
+    "@types/date-fns": "^2.6.0",
+    "date-fns": "^2.24.0",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"

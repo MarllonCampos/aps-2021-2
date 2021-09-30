@@ -3,6 +3,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { Card } from "../components/Card";
+import { format } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 type IWeather = {
   id: number;
@@ -36,7 +38,6 @@ export default function Home({
 }: IProps) {
   return (
     <div className={styles.wrapper}>
-      {console.log(props)}
       <div className={styles.container}>
 
       <Head>
@@ -133,13 +134,9 @@ export const getStaticProps: GetStaticProps = async () => {
     dec: 175,
   };
   function getFormattedDate(date: Date) {
-    const year = date.getFullYear();
-    const month = (1 + date.getMonth())
-      .toString()
-      .padStart(2, "0");
-    const day = date.getDate().toString().padStart(2, "0");
+    const formatedDate = format(date, 'dd/MM/yyyy',{locale:ptBR})
 
-    return day + "/" + month + "/" + year;
+    return formatedDate
   }
 
   const today = new Date();
