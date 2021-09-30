@@ -139,7 +139,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const brazil = new Date(utc + (3600000 * -3));
     const brazilTime = new Date(brazil);
     const formatedDate = format(brazilTime, 'dd/MM/yyyy',{locale:ptBR})
-
+    console.log(brazilTime)
     return formatedDate
   }
 
