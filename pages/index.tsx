@@ -134,17 +134,11 @@ export const getStaticProps: GetStaticProps = async () => {
     dec: 175,
   };
   function getFormattedDate(date: Date) {
-    const time = new Date();
-    const utc = time.getTime() + (time.getTimezoneOffset() * 60000);
-    const brazil = new Date(utc + (3600000 * -3));
-    const brazilTime = new Date(brazil);
-    const formatedDate = format(brazilTime, 'dd/MM/yyyy',{locale:ptBR})
-    console.log(brazilTime)
+    const formatedDate = format(date, 'dd/MM/yyyy',{locale:ptBR})
     return formatedDate
   }
 
   const today = new Date();
-  const ptbrDate = getFormattedDate(today);
 
   const actualMonth: string = monthNames[today.getMonth()];
   const monthPrecipProbability =
@@ -185,6 +179,9 @@ export const getStaticProps: GetStaticProps = async () => {
     `${API_ACCU_URL}`
   );
   const dataAccu = await responseAccu.json();
+
+
+  const ptbrDate = getFormattedDate(new Date(dataClima.data.date));
 
   let formatClima = {
     ...dataClima,
