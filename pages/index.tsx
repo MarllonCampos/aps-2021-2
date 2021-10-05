@@ -188,7 +188,7 @@ export const getStaticProps: GetStaticProps = async () => {
     data: {
       ...dataClima.data,
       date: ptbrDate,
-      alagProbability,
+      alagProbability: alagProbability.toFixed(2) == '0.00' ? 0 : alagProbability.toFixed(2),
       pressure: pressure.toFixed(2),
     },
   };
