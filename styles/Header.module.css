@@ -1,0 +1,12 @@
+.city {
+  margin-top:10px
+}
+.city, .date {
+  margin-bottom:20px;
+}
+
+
+.weatherContainer {
+  min-height: 125px;
+}
+

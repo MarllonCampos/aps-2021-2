@@ -7,13 +7,6 @@
   align-items: center;
   max-height: 100vh;
 }
-.city {
-  margin-top:20px
-}
-.city, .date, .todayCondition {
-  margin-bottom:20px;
-}
-
 .wrapper {
   min-height: 100vh;
   display:flex;
@@ -23,30 +16,13 @@
 
 }
 
-.weatherContainer {
-  min-height: 125px;
-}
-
-.grid {
-  margin-top: 24px;
-  flex: 1;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  padding-bottom: 23px;
-  max-height: 300px;
+.todayCondition {
+  font-family: 'Poppins';
+  font-size: 23px;
 
 }
-
-@media (min-width:860px){
-  .grid {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 45px;
+@media(max-width:860px) {
+  .todayCondition {
+    margin-top:5px;
   }
-}
-
-.grid::-webkit-scrollbar {
-  display:none;
 }

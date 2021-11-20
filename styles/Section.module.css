@@ -1,0 +1,28 @@
+ 
+.grid {
+  margin-top: 24px;
+  flex: 1;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 23px;
+  max-height: 300px;
+
+}
+
+@media (min-width:860px){
+  .grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 45px;
+    max-height: fit-content;
+  }
+
+}
+
+.grid::-webkit-scrollbar {
+  display:none;
+}
+
+ 
